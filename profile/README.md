@@ -101,9 +101,11 @@ Then write `Hello/Hello.asmproj`. Every `*.asm` next to it becomes part of
 
 ## Get involved
 
-- **Issues and pull requests are welcome** in every repository. Each
-  repository's `CONTRIBUTING.md` lists the checks a change must pass. A
-  performance change needs a paired measurement, not an argument.
+- **Issues and pull requests are welcome** in every repository.
+  [CONTRIBUTING.md](https://github.com/AsmFoundation/.github/blob/main/CONTRIBUTING.md)
+  lists what a change needs, and a repository's own guide adds its build and
+  test commands. A performance change needs a paired measurement, not an
+  argument.
 - **Security:** report vulnerabilities privately, through the repository's
   **Security → Report a vulnerability** form
   ([SECURITY.md](https://github.com/AsmFoundation/.github/blob/main/SECURITY.md)),

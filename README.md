@@ -10,6 +10,7 @@ things from it:
   - `panel-dark.png` is the same panel on a white rounded card. Its
     dark-teal labels would be nearly invisible on GitHub's dark background
     otherwise.
-- **[`SECURITY.md`](SECURITY.md)** is the default security policy. GitHub
-  applies it to every repository in the organization that has no policy of
-  its own.
+- **The default community files:** GitHub applies these to every
+  repository in the organization that has no file of its own.
+  - [`SECURITY.md`](SECURITY.md) is the security policy.
+  - [`CONTRIBUTING.md`](CONTRIBUTING.md) is the contribution guide.
