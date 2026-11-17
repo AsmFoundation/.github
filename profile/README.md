@@ -5,7 +5,7 @@
   <img alt="The AsmFoundation map. The AsmFoundation logo sits in the middle, connected to sixteen services: ComputeAsm, ContainersAsm, FunctionsAsm, StorageAsm, DatabaseAsm, NetworkAsm, CacheAsm, DNSAsm, QueueAsm, GatewayAsm, RegistryAsm, LoadBalancerAsm, IdentityAsm, SecretsAsm, MonitorAsm and CDNAsm." src="./assets/panel.png">
 </picture>
 
-### Infrastructure software, hand-written in x86-64 assembly.
+### Cloud backend infrastructure, hand-written in x86-64 assembly.
 
 **FOSAS: Free Open Source Assembly Software.** Apache-2.0. Measured, not argued.
 
@@ -13,11 +13,14 @@
 
 ---
 
-The AsmFoundation builds the services infrastructure runs on (key-value
-stores, RPC, storage, and the rest of the map above) in hand-written NASM.
-Every service ships with modern packaging: container images, NuGet
-packages, .NET clients. And every public claim comes with the measurement
-behind it.
+The AsmFoundation builds competitive backend services in hand-written NASM:
+key-value stores, RPC, storage, and the rest of the map above.
+
+- **Tiny containers:** they run in Linux containers measured in megabytes
+  (KvAsm's whole image is 2 MB).
+- **Modern packaging:** container images, NuGet packages, .NET clients.
+- **Evidence:** every public performance claim comes with the measurement
+  behind it.
 
 ## Projects
 

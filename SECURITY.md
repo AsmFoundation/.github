@@ -17,7 +17,8 @@ release of the affected project, and ship as a new patch version.
 1. Use GitHub's private reporting form: the affected repository's
    **Security** tab, then **Report a vulnerability**. Only the maintainers can
    read the report. Every AsmFoundation repository has private reporting
-   turned on.
+   turned on. If you cannot use the form, e-mail <contact@nucs.dev>, the
+   organization's published contact, with "SECURITY" in the subject.
 2. Include:
    - the project and its version (or commit, package version or image
      digest);
