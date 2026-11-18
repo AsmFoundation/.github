@@ -27,9 +27,9 @@ key-value stores, RPC, storage, and the rest of the map above.
 | Project | What it is | Status |
 |---|---|---|
 | **[KvAsm](https://github.com/AsmFoundation/KvAsm)** | A gRPC key-value server in x86-64 assembly. Its HTTP/2 engine, HPACK decoder, gRPC layer and protobuf codec are all hand-written: to our knowledge, the first gRPC server written in assembly. **8.84M GET/s on 4 cores, 2.29–3.68× Redis, Valkey, Dragonfly, Garnet and Memcached** on small-value reads ([evidence and scope](https://github.com/AsmFoundation/KvAsm/blob/main/docs/CLAIMS.md)). h2spec 146/146; ships as a 2 MB `FROM scratch` image. | **0.3.0**: [image](https://github.com/orgs/AsmFoundation/packages/container/package/kvasm), [`KvAsm.Client`](https://www.nuget.org/packages/KvAsm.Client) |
-| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Enterprise-grade project, dependency and build management for assembly, on MSBuild and NuGet. An `.asmproj` sits next to `.csproj` in one solution and builds with `dotnet build`. Asm libraries are versioned NuGet packages, consumed with `PackageReference`. The NASM + LLVM toolchain is restored like any package, so there is nothing to install. | **0.1.0**: [docs](https://asmfoundation.github.io/AsmSdk/), [`AsmFoundation.Sdk`](https://www.nuget.org/packages/AsmFoundation.Sdk) |
-| **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem, one per topic. `asmsdk` teaches Claude AsmSdk end to end, with facts verified against the real SDK, a 31-check linter, and an evaluation in which, with the plugin, 12 of 12 agent-written projects built and passed their checks against the real SDK, compared with 4 of 12 without it. | **asmsdk 0.1.2**: `/plugin marketplace add AsmFoundation/AsmClaudeMarketplace` |
-| **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server **and client** in assembly: KvAsm's engine, made general. Zero-copy handlers, with NASM, C, .NET and Python APIs. | **in development**: the server engine and its C API (`libgrpcasm.so`) work, and CI checks them with h2spec and grpc-dotnet; not released yet |
+| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Enterprise-grade project, dependency and build management for assembly, on MSBuild and NuGet. An `.asmproj` sits next to `.csproj` in one solution, uses .NET's own properties (`TargetFramework` `freestanding` or `libc`, `AssemblyName`, `DefineConstants`), builds with `dotnet build`, and shows in Rider, Visual Studio and VS Code like a `.csproj`. Asm libraries are versioned NuGet packages, consumed with `PackageReference`. The NASM + LLVM toolchain is restored like any package, so there is nothing to install. | **0.2.0**: [docs](https://asmfoundation.github.io/AsmSdk/), [`AsmFoundation.Sdk`](https://www.nuget.org/packages/AsmFoundation.Sdk) |
+| **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem, one per topic. `asmsdk` teaches Claude AsmSdk end to end, with facts verified against the real SDK, a 33-check linter that also names each 0.1.0 setting's 0.2.0 replacement, and an evaluation (plugin 0.1.0, on SDK 0.1.0) in which, with the plugin, 12 of 12 agent-written projects built and passed their checks against the real SDK, compared with 4 of 12 without it. | **asmsdk 0.2.0**, for AsmSdk 0.2.0: `/plugin marketplace add AsmFoundation/AsmClaudeMarketplace` |
+| **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server **and client** in assembly: KvAsm's engine, made general. Services declared in a few lines of NASM, with the dispatch generated at assembly time; zero-copy handlers in NASM, C or .NET; Python next. | **in development**: the server, the client, and the NASM, C (`libgrpcasm.so`) and .NET (`GrpcAsm.Net`) APIs work, and CI checks them with h2spec 146/146, grpc-dotnet interop and KvAsm's whole suite; not released yet |
 | **StorageAsm** | Blob/S3-style object storage over gRPC on an assembly server: local NVMe devices and remote stores behind one API. | in design |
 
 ## The map
@@ -87,16 +87,16 @@ Name the SDK in `global.json`; restore downloads it and its toolchain from
 nuget.org:
 
 ```json
-{ "msbuild-sdks": { "AsmFoundation.Sdk": "0.1.0" } }
+{ "msbuild-sdks": { "AsmFoundation.Sdk": "0.2.0" } }
 ```
 
 Then write `Hello/Hello.asmproj`. Every `*.asm` next to it becomes part of
-`bin/Debug/libhello.so`:
+`bin/Debug/freestanding/libhello.so`:
 
 ```xml
 <Project Sdk="AsmFoundation.Sdk">
   <PropertyGroup>
-    <AsmLibraryName>hello</AsmLibraryName>
+    <AssemblyName>hello</AssemblyName>
   </PropertyGroup>
 </Project>
 ```
