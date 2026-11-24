@@ -29,7 +29,7 @@ platform or container. Apache-2.0. Measured, not argued.
 |---|---|---|
 | **[KvAsm](https://github.com/AsmFoundation/KvAsm)** | A gRPC key-value server | **0.3.0** |
 | **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client that runs your C# service class | in&nbsp;development |
-| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Assembly projects on MSBuild and NuGet, for Windows, Linux and macOS on x64 and ARM64 | **0.3.0** |
+| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Assembly projects on MSBuild and NuGet, for Windows, Linux and macOS on x64 and ARM64, and WebAssembly | **0.3.0** |
 | **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | HTTP/1.1, /2 and /3, written from the RFCs | in&nbsp;development |
 | **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem | asmsdk **0.3.0** |
 | **StorageAsm** | Object storage over gRPC | in design |
