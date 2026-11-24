@@ -7,8 +7,8 @@
 
 ### Free Open Source Assembly Software
 
-Competitive cloud and backend infrastructure, written in assembly, with exceptional performance for any
-platform or container. Apache-2.0. Measured, not argued.
+Competitive cloud/backend infrastructure, written in assembly, with exceptional performance for any
+platform or container.
 
 **[asmfoundation.github.io](https://asmfoundation.github.io/)**
 
