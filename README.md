@@ -12,8 +12,13 @@ things from it:
       is the same seal on a white rounded card, for dark ones (its ink letters
       would vanish on GitHub's dark background otherwise).
     - Each one stamps the letters in once, as the website's "print" animation
-      does (about four seconds), then turns the ring slowly. Under reduced
-      motion it is still.
+      does (about four seconds), and then stays still. Under reduced motion
+      nothing moves.
+    - Keep every animation in them finite. Until 2026-11-25 the ring turned
+      forever, and the page lagged: a browser redraws an animated image
+      whole on every frame, so the turning ring kept about one and a half
+      cores of headless Chrome busy for as long as the page stayed open.
+      Still, the image costs nothing once the stamp is done.
     - They were drawn from the website's own seal code: every glyph the
       canvas draws was recorded in headless Chrome and written out as SVG
       text, with Archivo and Martian Mono subset and embedded, because an
