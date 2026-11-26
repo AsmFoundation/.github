@@ -62,6 +62,11 @@ docker run --rm -p 50051:50051 ghcr.io/asmfoundation/kvasm:0.3.0
 { "msbuild-sdks": { "AsmFoundation.Sdk": "0.4.0" } }
 ```
 
+```sh
+dotnet new install AsmFoundation.Templates
+dotnet new asmnet -n Demo          # a C# app, the assembly library it calls, and its tests
+```
+
 The whole session, step by step: [Get started](https://asmfoundation.github.io/get-started/).
 
 ### Get involved
