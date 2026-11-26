@@ -30,12 +30,12 @@ Allowing transparent integration into most programming languages.
 
 | Project | What it is | State |
 |---|---|---|
-| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | SDK toolchain that builds native binaries from assembly with `dotnet build` for Windows, Linux and macOS on x64 and ARM64, and WebAssembly. | **0.3.0**, 0.4.0&nbsp;next |
+| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | SDK toolchain that builds native binaries from assembly with `dotnet build` for Windows, Linux and macOS on x64 and ARM64, and WebAssembly. | **0.4.0** |
 | **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | A complete HTTP networking library in cross-platform assembly: HTTP/1.1, HTTP/2 and HTTP/3 with QUIC and TLS | in&nbsp;development (M1&nbsp;done) |
 | **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client in assembly, with NASM, C and .NET APIs | in&nbsp;development |
 | **StorageAsm** | Object storage over gRPC | in design |
 | **[KvAsm](https://github.com/AsmFoundation/KvAsm)** | A gRPC key-value server | **0.3.0** |
-| **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem | asmsdk **0.3.0** |
+| **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem | asmsdk **0.4.0** |
 
 The measurements, one core first, are on the [Benchmarks](https://asmfoundation.github.io/benchmarks/)
 page, each with the run behind it.
@@ -59,7 +59,7 @@ docker run --rm -p 50051:50051 ghcr.io/asmfoundation/kvasm:0.3.0
 ```
 
 ```json
-{ "msbuild-sdks": { "AsmFoundation.Sdk": "0.3.0" } }
+{ "msbuild-sdks": { "AsmFoundation.Sdk": "0.4.0" } }
 ```
 
 The whole session, step by step: [Get started](https://asmfoundation.github.io/get-started/).
