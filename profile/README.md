@@ -42,15 +42,15 @@ page, each with the run behind it.
 
 ### Language compatibility
 
-| Language | How it works with the foundation |
-|---|---|
-| **Assembly** | Every project is written in it: NASM for x64, GNU syntax for ARM64, LLVM's for WebAssembly, built with `dotnet build` as `.asmproj` projects that reference each other and ship as NuGet packages |
-| **.NET** (C#), first&nbsp;class | A `ProjectReference` or `PackageReference` to an asm project brings each platform's binary and the C# bindings the SDK writes from its `PROTO` lines. GrpcAsm runs your grpc-dotnet service classes, and KvAsm has a NuGet client |
-| **C and C++** | Plain C ABI libraries, shared or static, with a header the SDK writes (`<name>.h`); GrpcAsm and HttpAsm have C APIs |
-| **Python** | `ctypes`, or `cffi` reading the same header; GrpcAsm's Python API is next |
-| **Rust, Go, Zig** | Their C FFI (`extern "C"`, cgo, `@cImport`) over the same libraries |
-| **JavaScript** | WebAssembly modules, in browsers, Node, Deno and Bun |
-| **Any gRPC language** | KvAsm and GrpcAsm speak standard gRPC, so Java, Go, Python, Node and Rust clients work as they are |
+| Language | How it works with the foundation | Examples |
+|---|---|---|
+| **Assembly** | Every project is written in it: NASM for x64, GNU syntax for ARM64, LLVM's for WebAssembly, built with `dotnet build` as `.asmproj` projects that reference each other and ship as NuGet packages | [AsmSdk's samples](https://github.com/AsmFoundation/AsmSdk/tree/main/samples), [GrpcAsm's Greeter](https://github.com/AsmFoundation/GrpcAsm/tree/main/samples/Greeter), [HttpAsm's Hello](https://github.com/AsmFoundation/HttpAsm/tree/main/samples/Hello) |
+| **.NET** (C#), first&nbsp;class | A `ProjectReference` or `PackageReference` to an asm project brings each platform's binary and the C# bindings the SDK writes from its `PROTO` lines. GrpcAsm runs your grpc-dotnet service classes, and KvAsm has a NuGet client | [Crc32C](https://asmfoundation.github.io/AsmSdk/examples/crc32c.html), [GreeterNet](https://github.com/AsmFoundation/GrpcAsm/tree/main/samples/GreeterNet), [KvAsm.Client](https://github.com/AsmFoundation/KvAsm/tree/main/client/dotnet) |
+| **C and C++** | Plain C ABI libraries, shared or static, with a header the SDK writes (`<name>.h`); GrpcAsm and HttpAsm have C APIs | [GreeterC](https://github.com/AsmFoundation/GrpcAsm/tree/main/samples/GreeterC), [Crc32C from C++](https://asmfoundation.github.io/AsmSdk/examples/callers.html#c) |
+| **Python** | `ctypes`, or `cffi` reading the same header; GrpcAsm's Python API is next | [a package around Crc32C](https://asmfoundation.github.io/AsmSdk/examples/callers.html#python-a-package-with-the-library-in-its-wheel), [a KvAsm client](https://github.com/AsmFoundation/KvAsm/tree/main/examples/python) |
+| **Rust, Go, Zig** | Their C FFI (`extern "C"`, cgo, Zig's translate-c) over the same libraries | Crc32C from [Rust](https://asmfoundation.github.io/AsmSdk/examples/callers.html#rust), [Go](https://asmfoundation.github.io/AsmSdk/examples/callers.html#go) and [Zig](https://asmfoundation.github.io/AsmSdk/examples/callers.html#zig) |
+| **JavaScript** | WebAssembly modules, in browsers, Node, Deno and Bun | [the Wasm Demos](https://asmfoundation.github.io/AsmSdk/demos/), [a module from Node](https://github.com/AsmFoundation/AsmSdk/tree/main/src/AsmFoundation.Templates/templates/asmwasm) |
+| **Any gRPC language** | KvAsm and GrpcAsm speak standard gRPC, so Java, Go, Python, Node and Rust clients work as they are | [KvAsm from Python and Go](https://github.com/AsmFoundation/KvAsm/tree/main/examples) |
 
 ### Try it
 
