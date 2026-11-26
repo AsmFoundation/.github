@@ -28,14 +28,26 @@ platform or container.
 | Project | What it is | State |
 |---|---|---|
 | **[KvAsm](https://github.com/AsmFoundation/KvAsm)** | A gRPC key-value server | **0.3.0** |
-| **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client that runs your C# service class | in&nbsp;development |
-| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Assembly projects on MSBuild and NuGet, for Windows, Linux and macOS on x64 and ARM64, and WebAssembly | **0.3.0** |
-| **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | HTTP/1.1, /2 and /3, written from the RFCs | in&nbsp;development |
+| **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client in assembly, with NASM, C and .NET APIs | in&nbsp;development |
+| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | Builds native binaries from assembly with `dotnet build`, no C# needed, for Windows, Linux and macOS on x64 and ARM64, and WebAssembly | **0.3.0**, 0.4.0&nbsp;next |
+| **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | A complete HTTP networking library in cross-platform assembly: HTTP/1.1, HTTP/2 and HTTP/3 with QUIC and TLS | in&nbsp;development (M1&nbsp;done) |
 | **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem | asmsdk **0.3.0** |
 | **StorageAsm** | Object storage over gRPC | in design |
 
 The measurements, one core first, are on the [Benchmarks](https://asmfoundation.github.io/benchmarks/)
 page, each with the run behind it.
+
+### Language compatibility
+
+| Language | How it works with the foundation |
+|---|---|
+| **Assembly** | Every project is written in it: NASM for x64, GNU syntax for ARM64, LLVM's for WebAssembly, built with `dotnet build` as `.asmproj` projects that reference each other and ship as NuGet packages |
+| **.NET** (C#), first&nbsp;class | A `ProjectReference` or `PackageReference` to an asm project brings each platform's binary and the C# bindings the SDK writes from its `PROTO` lines. GrpcAsm runs your grpc-dotnet service classes, and KvAsm has a NuGet client |
+| **C and C++** | Plain C ABI libraries, shared or static, with a header the SDK writes (`<name>.h`); GrpcAsm and HttpAsm have C APIs |
+| **Python** | `ctypes`, or `cffi` reading the same header; GrpcAsm's Python API is next |
+| **Rust, Go, Zig** | Their C FFI (`extern "C"`, cgo, `@cImport`) over the same libraries |
+| **JavaScript** | WebAssembly modules, in browsers, Node, Deno and Bun |
+| **Any gRPC language** | KvAsm and GrpcAsm speak standard gRPC, so Java, Go, Python, Node and Rust clients work as they are |
 
 ### Try it
 
