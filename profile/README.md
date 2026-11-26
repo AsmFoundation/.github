@@ -8,7 +8,10 @@
 ### Free Open Source Assembly Software
 
 Competitive cloud/backend infrastructure, written in assembly, with exceptional performance for any
-platform or container.
+platform or container.<br>
+The AsmSdk toolchain allows integration with most of the modern programming languages through pinvoking that
+AsmSdk manages and exports<br>
+Allowing transparent integration into most programming languages.
 
 **[asmfoundation.github.io](https://asmfoundation.github.io/)**
 
@@ -27,7 +30,7 @@ platform or container.
 
 | Project | What it is | State |
 |---|---|---|
-| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | SDK toolchain that builds native binaries from assembly with `dotnet build`, no C# needed, for Windows, Linux and macOS on x64 and ARM64, and WebAssembly | **0.3.0**, 0.4.0&nbsp;next |
+| **[AsmSdk](https://github.com/AsmFoundation/AsmSdk)** | SDK toolchain that builds native binaries from assembly with `dotnet build` for Windows, Linux and macOS on x64 and ARM64, and WebAssembly. | **0.3.0**, 0.4.0&nbsp;next |
 | **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | A complete HTTP networking library in cross-platform assembly: HTTP/1.1, HTTP/2 and HTTP/3 with QUIC and TLS | in&nbsp;development (M1&nbsp;done) |
 | **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client in assembly, with NASM, C and .NET APIs | in&nbsp;development |
 | **StorageAsm** | Object storage over gRPC | in design |
