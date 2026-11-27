@@ -34,7 +34,7 @@ Allowing transparent integration into most programming languages.
 | **[HttpAsm](https://github.com/AsmFoundation/HttpAsm)** | A complete HTTP networking library in cross-platform assembly: HTTP/1.1, HTTP/2 and HTTP/3 with QUIC and TLS | in&nbsp;development (M1&nbsp;done) |
 | **[GrpcAsm](https://github.com/AsmFoundation/GrpcAsm)** | A gRPC server and client in assembly, with NASM, C and .NET APIs | in&nbsp;development |
 | **StorageAsm** | Object storage over gRPC | in design |
-| **ContainersAsm** | A container runtime and shim in assembly, and LinuxAsmOS images | in design |
+| **ContainersAsm** | A container runtime and shim in assembly, and LinuxAsmOS images | in&nbsp;development |
 | **[KvAsm](https://github.com/AsmFoundation/KvAsm)** | A gRPC key-value server | **0.3.0** |
 | **[AsmClaudeMarketplace](https://github.com/AsmFoundation/AsmClaudeMarketplace)** | Claude Code plugins for this ecosystem | asmsdk **0.4.0** |
 
